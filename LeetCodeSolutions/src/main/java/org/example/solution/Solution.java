@@ -10,12 +10,10 @@ public class Solution {
         Map<Integer, Integer> map = new HashMap<>();
         List<Integer> intersection = new ArrayList<>();
 
-        // Count frequencies of elements in nums1
         for (int num : nums1) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
 
-        // Find intersections with nums2
         for (int num : nums2) {
             if (map.containsKey(num) && map.get(num) > 0) {
                 intersection.add(num);
@@ -23,7 +21,6 @@ public class Solution {
             }
         }
 
-        // Convert list to array
         int[] result = new int[intersection.size()];
         for (int i = 0; i < intersection.size(); i++) {
             result[i] = intersection.get(i);
